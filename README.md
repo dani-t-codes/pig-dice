@@ -43,6 +43,7 @@ Test: When the "roll" button is clicked, an image of the dice rolled appears on 
 Expect: rollDie(2).expect.show(img(2))
 
 (&&)
+
 Test: When the "roll" button is clicked, the chosen number will be appended to the list of points rolled for this turn.
 Code: playerTurnScore.push( [number value determined by Math.floor function above])
 Expect: rollDie(2).expect.push(2); playerTurnScore = [(roll 1 value), (roll 2 value), ...]
@@ -69,6 +70,14 @@ Test: If 2:6 is rolled, player may roll again.
 Test: If 2:6 is rolled, computer adds number rolled to array scoreAdd([]). 
 &&
 Test: Number 2:6 added to array gets added together for totalPlayerScore. 
+
+Describe: holdButton()
+
+Test: When the "Hold" button is clicked, the current playerTurnScore will be "locked in" for that turn.
+
+Test: When the "Hold" button is clicked, the current playerTurnScore will be added to the totalPlayerScore for that player.
+
+Test: When the "Hold" button is clicked, the current player's turn will end, passing to the next players turn.
 
 
 Describe: playerTurnScore()
