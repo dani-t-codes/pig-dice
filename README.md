@@ -33,16 +33,21 @@ Expect: play.expect(assignPlayer2)
 
 
 Describe: rollDie()
-Test: If die is rolled, app should randomly choose number between 1 & 6.
+Test: When the "roll" button is clicked, app will randomly choose number between 1 & 6.
 Code: Math.floor(Math.random() * 6) + 1
 Expect: rollDie().expect(singleNumber:1-6)
 
-&&
+(&&)
 
-Test: If 1 is rolled, the turn score is erased.
+Test: When the "roll" button is clicked, an image of the dice rolled appears on the UI.
+Expect: rollDie(2).expect.show(img(2))
+
+(if)
+
+Test: If 1 is rolled, the turn score for that player on that turn becomes 0.
 Expect: rollDie(1).expect(0)
 
-&&
+(&&)
 
 Test: If 1 is rolled, player turn ends. 
 Expect: rollDie(1).expect(playerXTurnEnds)
@@ -52,14 +57,17 @@ Expect: rollDie(1).expect(playerXTurnEnds)
 Test: If 1 is rolled, a message appears stating that the turn has ended due to a turn score of zero.
 Expect: rollDie(1).expect(playerXTurnEndMessage)
 
-||
+(else)
  
-Test: If 2:6 is rolled, player rolls again. 
+Test: If 2:6 is rolled, player may roll again. 
 && 
 Test: If 2:6 is rolled, computer adds number rolled to array scoreAdd([]). 
 &&
-Test: Number 2:6 added to array gets added together for score. 
+Test: Number 2:6 added to array gets added together for totalPlayerScore. 
 
+
+Describe: playerTurnScore()
+Test: 
 
 Describe: totalPlayerScore()
 Test: When 1st player's score reaches 100+, that player wins game. 

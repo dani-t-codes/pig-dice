@@ -4,7 +4,7 @@ clickPlay()
 //Game Page UI
 players = [];
   playerName || playerX
-  playerTurn --> return boolean 
+  playerTurn return Boolean 
   
 scoreBoard
   turnRolls 
