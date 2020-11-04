@@ -18,20 +18,23 @@ _{jQuery}_
 ### Tests
 Describe: play()
 Test: Shows instructions to play game alongside "play" button to enter game.
+Code: {pseudocode:} When you click play, the play button disapears and the game "board" appears. ".hide" and ".show"
 Expect: play.expect(startsGame)  
 
 && 
 
-Test: Clicking play assigns you to Player 1. 
+Test: Clicking play prompts the user to enter "player 1 name".
 Expect: play.expect(assignPlayer1)
 
-||
+&&
 
-Test: Clicking play assigns you to Player 2. 
+Test: Clicking play prompts the user to enter "player 2 name". 
 Expect: play.expect(assignPlayer2)
+
 
 Describe: rollDie()
 Test: If die is rolled, app should randomly choose number between 1 & 6.
+Code: Math.floor(Math.random() * 6) + 1
 Expect: rollDie().expect(singleNumber:1-6)
 
 &&
@@ -44,6 +47,11 @@ Expect: rollDie(1).expect(0)
 Test: If 1 is rolled, player turn ends. 
 Expect: rollDie(1).expect(playerXTurnEnds)
 
+&&
+
+Test: If 1 is rolled, a message appears stating that the turn has ended due to a turn score of zero.
+Expect: rollDie(1).expect(playerXTurnEndMessage)
+
 ||
  
 Test: If 2:6 is rolled, player rolls again. 
@@ -52,7 +60,18 @@ Test: If 2:6 is rolled, computer adds number rolled to array scoreAdd([]).
 &&
 Test: Number 2:6 added to array gets added together for score. 
 
-Describe: 
+
+Describe: totalPlayerScore()
+Test: When 1st player's score reaches 100+, that player wins game. 
+Expect: playerXScore(100).toEqual(gameWon) 
+&& 
+Test: When 2nd player is below score of 100, that player loses game. 
+Expect: playerYScore(<100).toEqual(gameLost)
+
+
+Describe: gameEnds()
+Test: When game ends, screen branches to player that won & their score with option to play again or exit. 
+Expect: playerXWon.show(results && "play again(Y/N)?")
 
 <!-- *Game Play*
 
