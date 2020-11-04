@@ -126,12 +126,14 @@ First, carefully read each project description below, and decide which project t
 	- Dice
     1. randomNumberGenerator (function, most likely)
     2. img of side of die that is landed on (**Extra credit**)
-	- 
 
  * What functions?
-	- 
-	- 
-	- 
+	- numberGenerator function
+	- turn order function
+	- score keeping function
+  - need to be able to display turn score and total score
+  - "hold" function
+  - roll of "0" function
 
  * How will these be triggered throughout the gameplay?
 	- 

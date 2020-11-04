@@ -13,7 +13,7 @@ scoreBoard
   winner(playerTotal.toEqual(100))
   //extra cred: give other player one more roll 
   //  logsScore
-  
+
   // --- Code for generating a number between 1 & 6 (inclusive): --- 
 // Math.floor(Math.random() * 6) + 1  
 // How this works: Math.random() generates a fraction between 0 and 1 (so like 0.5, 0.3353, 0.999, etc)
