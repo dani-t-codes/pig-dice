@@ -42,6 +42,11 @@ Expect: rollDie().expect(singleNumber:1-6)
 Test: When the "roll" button is clicked, an image of the dice rolled appears on the UI.
 Expect: rollDie(2).expect.show(img(2))
 
+(&&)
+Test: When the "roll" button is clicked, the chosen number will be appended to the list of points rolled for this turn.
+Code: playerTurnScore.push( [number value determined by Math.floor function above])
+Expect: rollDie(2).expect.push(2); playerTurnScore = [(roll 1 value), (roll 2 value), ...]
+
 (if)
 
 Test: If 1 is rolled, the turn score for that player on that turn becomes 0.
