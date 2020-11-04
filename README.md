@@ -74,11 +74,13 @@ Test: Number 2:6 added to array gets added together for totalPlayerScore.
 Describe: holdButton()
 
 Test: When the "Hold" button is clicked, the current playerTurnScore will be "locked in" for that turn.
+Expect: $("button#hold-button").click(playerXTurnScore = playerXTurnScore)
 
 Test: When the "Hold" button is clicked, the current playerTurnScore will be added to the totalPlayerScore for that player.
+Expect: $("button#hold-button").click(playerTotalScore.append(playerxTurnScore))
 
 Test: When the "Hold" button is clicked, the current player's turn will end, passing to the next players turn.
-
+Expect: $("button#hold-button").click(playerXTurnEnd)
 
 Describe: playerTurnScore()
 Test: 
@@ -89,6 +91,10 @@ Expect: playerXScore(100).toEqual(gameWon)
 && 
 Test: When 2nd player is below score of 100, that player loses game. 
 Expect: playerYScore(<100).toEqual(gameLost)
+
+Describe: turnEnd()
+Test: When a number 1 is rolled or the "hold" button is clicked, the turn ends, passing play to the next player.
+Expect: 
 
 
 Describe: gameEnds()
