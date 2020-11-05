@@ -82,11 +82,9 @@ Expect: $("button#hold-button").click(playerTotalScore.append(playerxTurnScore))
 Test: When the "Hold" button is clicked, the current player's turn will end, passing to the next players turn.
 Expect: $("button#hold-button").click(playerXTurnEnd)
 
-Describe: playerTurnScore()
-Test: 
 
 Describe: totalPlayerScore()
-Test: When 1st player's score reaches 100+, that player wins game. 
+Test: When any player reaches 100+, that player wins game. 
 Expect: playerXScore(100).toEqual(gameWon) 
 && 
 Test: When 2nd player is below score of 100, that player loses game. 
