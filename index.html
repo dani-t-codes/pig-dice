@@ -13,7 +13,7 @@
     <!--Page Head-->
     <div class="container">
       <h1>Pig Dice</h1>
-      <h3>A Game of Chance for Two Players</h3>
+      <h3>A Game of Strategy and Chance for Two Players</h3>
     </div>
   </div>
 </header>
@@ -24,30 +24,66 @@
     <div>
       <h2>About the Game</h2>
 
-      <p>Good luck!</p>
+      <p>Pig Dice is one of a family of dice games described by Reiner Knizia as "jeopardy dice games". In jeopardy approach games, the object is to most closely approach a goal score without exceeding it. In Pig Dice, you'll roll dice each round, adding up the total number from all dice rolled. That is, unless a 1 is rolled, at which point your turn score becomes 0 and you pass your turn to your opponent. It begins as a game of chance, but quickly turns into a game of strategy as you compete with yourself and your opponent over the risks vs the rewards.</p>
+
+      <p>Good luck, and have fun!</p>
 
     </div>
     <!--How to Play-->
     <div>
       <h4>How to Play</h4>
-      <p>
-        Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold". If the player rolls a 1, they score nothing and it becomes the next player's turn. If the player rolls any other number, it is added to their turn total and the player's turn continues. If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
-      </p>
-      <p>The first player to score 100 or more points wins. </p>
+
+      <p>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold". If the player rolls a 1, they score nothing and it becomes the next player's turn. If the player rolls any other number, it is added to their turn total and the player's turn continues. If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</p>
+
+      <p>The first player to score 100 or more points wins!</p>
     </div>
     <!--Play Button-->
     <div>
       <button id="play-button" type="submit">Play!</button>
       <!--Extra Credit: making the button centered and large on the page-->
     </div>
-    <!--Actual Game...-->
-    <!-- Dice Shtuff then ... !-->
-    <table id="scoreCard">
-      <!-- div columns here-->
-      <img src="images/turn-table.png" alt="A picture of the columns that will be added into page...eventually.">
-    </table>
-    <div>
-      <!--...Would Go Here-->
+
+    <!--Game "Board"-->
+    <div class="row">
+      <table id="scoreCard">
+        <!-- div columns here-->
+        <img src="images/turn-table.png" alt="A picture of the columns that will be added into page...eventually.">
+      </table>
+      <div class="card-group">
+        <!--Player 1 Board-->
+        <div class="card border-dark mb-3">
+          <div class="card-header">Player 1 Name</div>
+          <div class="card-body text-dark">
+            <h5>Turn Score:</h5>
+            <p><em>Without an actual score list, this is placeholder.</em></p>
+            <h5 class="card-title">Total Score: <span>?###?</span></h5>
+            <ul class="card-text">
+              <!--Where we will push the rolls for the turn-->
+            </ul>
+            <div class="card-footer bg-transparent border-dark">
+              <button class="btn btn-primary">ROLL</button>
+              <button class="btn btn-warning">HOLD</button>
+            </div>
+          </div>
+        </div>
+
+        <!--Player 2 Board-->
+        <div class="card border-dark mb-3">
+          <div class="card-header">Player 2 Name</div>
+          <div class="card-body text-dark">
+            <h5>Turn Score:</h5>
+            <p><em>Without an actual score list, this is placeholder.</em></p>
+            <h5 class="card-title">Total Score: <span>?###?</span></h5>
+            <ul class="card-text">
+              <!--Where we will push the rolls for the turn-->
+            </ul>
+            <div class="card-footer bg-transparent border-dark">
+              <button class="btn btn-primary">ROLL</button>
+              <button class="btn btn-warning">HOLD</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </body>

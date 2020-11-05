@@ -54,3 +54,30 @@ playerTotalScore = add (playerTurnScore/turn)
 playerTurnScore = add (playerTurnRolls);
 
 playerTurnRolls = []; e
+
+////////////////////////
+let turnRoll = [];
+let turnSum = 0;
+let totalScore = 0;
+
+function turnAction(input) {
+  input.push(Math.floor(Math.random() * 6) +1);
+  for (let i = 0; i < input.length; i +=1) {
+    if (input[i] === 1) {
+      console.log("has one");
+      input = [0];
+    } else {
+      console.log("does not have one");
+    }
+  }
+};
+
+function holdButtonPressed(input) {
+  turnSum = turnRoll.reduce(function(a, b) {
+    return a + b;
+  }, 0);
+  console.log(turnSum);
+  totalScore += turnSum;
+  turnRoll = [0];
+  turnSum = 0;
+};
