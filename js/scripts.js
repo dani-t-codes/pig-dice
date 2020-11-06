@@ -56,16 +56,21 @@ playerTurnScore = add (playerTurnRolls);
 playerTurnRolls = []; e
 
 ////////////////////////
+// This stuff will be moved and declared in the event page load handler so they aren't ""global"" variables
 let turnRoll = [];
 let turnSum = 0;
 let totalScore = 0;
+let player1turn = true;
+let player2turn = false;
+let player1TotalScore = 0;
+let player2TotalScore = 0;
 
-function turnAction(input) {
+function rollButtonPressed(input) {
   input.push(Math.floor(Math.random() * 6) +1);
   for (let i = 0; i < input.length; i +=1) {
     if (input[i] === 1) {
       console.log("has one");
-      input = [0];
+      input = [0]; // does not yet work as intended
     } else {
       console.log("does not have one");
     }
@@ -77,7 +82,13 @@ function holdButtonPressed(input) {
     return a + b;
   }, 0);
   console.log(turnSum);
-  totalScore += turnSum;
+  if (player1turn === true) {
+    player1TotalScore += turnSum;
+  } else {
+    player2TotalScore += turnSum;
+  }
+  player1turn = !player1turn;
+  player2turn = !player2turn;
   turnRoll = [0];
   turnSum = 0;
 };
